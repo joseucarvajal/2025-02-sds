@@ -1,0 +1,20 @@
+Identificar un proceso en una empresa o en una idea de negocio.
+
+Crear una aplicación cliente-servidor WEB que capture los datos para dicho proceso.
+
+Generar código servidor (PHP) para validar la información que proviene del cliente, estas validaciones deben contemplar:
+- Valores requeridos
+- Longitud de los valores. (ejemplo: el nombre puede tener máximo 20 caracteres)
+
+Generar código cliente para validar la información que proviene del cliente, estas validaciones deben contemplar:
+- Valores requeridos
+- Longitud de los valores. (ejemplo: el nombre puede tener máximo 20 caracteres)
+
+
+El código cliente debe ser HTML. También se debe utilizar CSS, JavaScript
+
+Parámetros de entrega:
+- Individual
+- Deben subir el código tanto cliente como servidor a un repositorio en GitHub (Por lo tanto deben crear una cuenta en GitHub)
+- Fecha y hora máxima de entrega: Miércoles 03 de septiembre a las 12 de la noche.
+- Cada día de retraso en la entrega del taller/proyecto se descontará una unidad de la nota definitiva del taller/trabajo
