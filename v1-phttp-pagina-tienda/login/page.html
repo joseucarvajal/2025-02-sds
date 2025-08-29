@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+    }
+    h1 {
+        text-align: center;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+    label {
+        margin-top: 10px;
+        font-weight: bold;
+    }
+    input {
+        margin-top: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    button {
+        margin-top: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+    }
+    span {
+        color: red;
+        font-size: 12px;
+    }
+</style>
+<html lang="es">
+    <head>
+        <title>Login</title>
+    </head>
+    <body>
+        <h1>Login</h1>
+        <form>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username">
+            <span id="username-error"></span>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password">
+            <span id="password-error"></span>
+            <button onclick="login(event)">Login</button>
+        </form>
+
+        <script>
+            function login(e) {
+                e.preventDefault();
+                const username = document.getElementById('username').value;
+                if (username == '') {
+                    document.getElementById('username-error').innerHTML = 'Username is required';
+                    return;
+                }
+                const password = document.getElementById('password').value;
+                if (password == '') {
+                    document.getElementById('password-error').innerHTML = 'Password is required';
+                    return;
+                }
+                fetch('login_servidor.php', {
+                    method: 'POST',
+                    body: JSON.stringify({ username, password }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                });
+            }
+        </script>
+    </body>
+</html>
